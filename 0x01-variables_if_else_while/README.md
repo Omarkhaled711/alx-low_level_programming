@@ -8,4 +8,5 @@
 7-print_tebahpla.c: print alphabet (lowercase) in reverse using putchar function  
 8-print_base16.c: print hexnumbers from 0 to f using putchar function  
 9-print_comb.c: program that prints all possible combinations of single-digit numbers, each number is followed by ',' and space  
-100-print_comb3.c: a program that prints all possible different combinations of two digits (Numbers must be different, and 01 is considered the same as 10)  
+100-print_comb3.c: a program that prints all possible different combinations of two digits (Numbers must be different, and 01 is considered the same as 10)using putchar  
+101-print_comb4.c: same as the previous one but this time with 3 digits. 
