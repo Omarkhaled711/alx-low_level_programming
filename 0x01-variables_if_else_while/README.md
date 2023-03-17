@@ -6,4 +6,5 @@
 5-print_numbers.c: print numbers from 0 to 9  
 6-print_numberz.c: print numbers from 0 to 9 using putchar function  
 7-print_tebahpla.c: print alphabet (lowercase) in reverse using putchar function  
-8-print_base16.c: print hexnumbers from 0 to f using putchar function
+8-print_base16.c: print hexnumbers from 0 to f using putchar function  
+9-print_comb.c: program that prints all possible combinations of single-digit numbers, each number is followed by ',' and space
