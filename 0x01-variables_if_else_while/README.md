@@ -4,4 +4,5 @@
 3-print_alphabets: print alphabet (lowercase then uppercas) using putchar function  
 4-print_alphabt.c: print alphabet in lowercase except for 'e' and 'q' using putchar fucntion  
 5-print_numbers.c: print numbers from 0 to 9  
-6-print_numberz.c: print numbers from 0 to 9 using putchar function
+6-print_numberz.c: print numbers from 0 to 9 using putchar function  
+7-print_tebahpla.c: print alphabet (lowercase) in reverse using putchar function
