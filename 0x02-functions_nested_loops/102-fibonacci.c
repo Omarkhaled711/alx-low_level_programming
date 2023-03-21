@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	long long  dp[52];
+	unsigned long dp[52];
 	int i;
 
 	dp[0] = 1;
@@ -19,8 +19,8 @@ int main(void)
 	}
 	for (i = 0; i < 49 ; i++)
 	{
-		printf("%lld, ", dp[i]);
+		printf("%lu, ", dp[i]);
 	}
-	printf("%lld\n", dp[49]);
+	printf("%lu\n", dp[49]);
 	return (0);
 }
