@@ -4,4 +4,5 @@
 3-islower.c:  a function that checks for lowercase character.  
 4-isalpha.c: a fucntion that checks for letters.  
 5-sign.c: checks the sign of a number  
-6-abs.c: a fucntion that computes the absluote of a number
+6-abs.c: a fucntion that computes the absluote of a number.  
+7-print_last_digit.c: returns the last digit of a given number
