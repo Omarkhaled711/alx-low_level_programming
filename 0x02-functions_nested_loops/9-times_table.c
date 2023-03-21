@@ -16,11 +16,9 @@ void times_table(void)
 			pro = i * j;
 			if (pro <= 9 && j != 0)
 				_putchar(' ');
-			_putchar('0' + pro / 10);
 			if (pro > 9)
-			{
-				_putchar('0' + pro %10);
-			}
+				_putchar('0' + pro / 10);
+			_putchar('0' + pro % 10);
 			pro = pro / 10;
 			if (j == 9)
 				break;
