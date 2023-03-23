@@ -25,13 +25,13 @@ int main(void)
 	a_half1 = a / 10000000000;
 	b_half1 = b / 10000000000;
 	a_half2 = a % 10000000000;
-	a_half2 = b % 10000000000;
+	b_half2 = b % 10000000000;
 
 	for (i = 93; i < 99; i++)
 	{
 		half1 = a_half1 + b_half1;
 		half2 = a_half2 + b_half2;
-		if (a_half2 + a_half2 > 9999999999)
+		if (a_half2 + b_half2 > 9999999999)
 		{
 			half1 += 1;
 			half2 %= 10000000000;
