@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	int reverse = 0;
+	int count = 0, reverse = 0;
 
 	if (n == 0)
 	{
@@ -22,13 +22,22 @@ void print_number(int n)
 	}
 	while (n)
 	{
+		count++;
 		reverse *= 10;
 		reverse += n % 10;
 		n = n / 10;
 	}
-	while (reverse)
+	while (reverse || count)
 	{
-		_putchar('0' + reverse % 10);
-		reverse /= 10;
+		if (reverse == 0)
+		{
+			_putchar('0');
+		}
+		else
+		{
+			_putchar('0' + reverse % 10);
+			reverse /= 10;
+		}
+		count--;
 	}
 }
