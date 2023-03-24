@@ -10,11 +10,6 @@ void print_number(int n)
 {
 	int count = 0, reverse = 0;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
 	if (n < 0)
 	{
 		_putchar('-');
@@ -27,6 +22,8 @@ void print_number(int n)
 		reverse += n % 10;
 		n = n / 10;
 	}
+	if (count == 0)
+		count = 1;
 	while (reverse || count)
 	{
 		if (reverse == 0)
