@@ -28,10 +28,10 @@ int _atoi(char *s)
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
 			ans *= 10;
-			ans += s[i] - '0';
+			ans -= s[i] - '0';
 		}
 	}
-	if (neg % 2 == 1)
+	if (neg % 2 == 0)
 	{
 		ans = -ans;
 	}
