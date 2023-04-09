@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	int mainNum, num, ans = 0, i, j, min;
+	int  num, ans = 0, i;
 	int change[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -18,25 +18,18 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	mainNum = atoi(argv[1]);
-	if (mainNum < 0)
+	num = atoi(argv[1]);
+	if (num < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-	min = mainNum;
 	for (i = 0; i < 5; i++)
 	{
-		num = mainNum;
-		for (j = i; j < 5; j++)
-		{
-			ans += (num / change[j]);
-			num -= ((num / change[j]) * change[j]);
-		}
-		if (ans < min)
-			min = ans;
+		ans += (num / change[i]);
+		num -= ((num / change[i]) * change[i]);
 	}
-	printf("%d\n", min);
+	printf("%d\n", ans);
 	return (0);
 }
 
