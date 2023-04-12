@@ -25,6 +25,29 @@ void copyString(char *dest, const char *src, int n)
 	}
 }
 /**
+ * count_words - Counts the number of words in the given string.
+ *
+ * @str: The input string.
+ * Return: The number of words in the string.
+ */
+int count_words(char *str)
+{
+	int i, count = 0;
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] == ' ')
+			continue;
+		count++;
+		while (str[i] && str[i] != ' ')
+			i++;
+		if (str[i] == 0)
+			break;
+	}
+	return (count);
+}
+
+/**
  * strtow - a function that splits a string into words.
  *
  * @str: a string to check
@@ -37,15 +60,8 @@ char **strtow(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	for (i = 0; str[i]; i++)
-	{
-		if (str[i] == ' ')
-			continue;
-		count++;
-		while (str[i] && str[i] != ' ')
-			i++;
-	}
-	arrStr = (char **) malloc(sizeof(char *) * count);
+	count = count_words(str);
+	arrStr = (char **) malloc(sizeof(char *) * (count + 1));
 	if (count == 0 || arrStr == NULL)
 		return (NULL);
 	count = 0;
