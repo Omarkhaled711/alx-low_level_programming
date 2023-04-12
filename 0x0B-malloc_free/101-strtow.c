@@ -35,7 +35,7 @@ char **strtow(char *str)
 	int i, j, count = 0;
 	char **arrStr;
 
-	if (str == NULL || str[0] == 0)
+	if (str == NULL)
 		return (NULL);
 	for (i = 0; str[i]; i++)
 	{
@@ -46,7 +46,7 @@ char **strtow(char *str)
 			i++;
 	}
 	arrStr = (char **) malloc(sizeof(char *) * (count + 1));
-	if (arrStr == NULL)
+	if (count == 0 || arrStr == NULL)
 		return (NULL);
 	count = 0;
 	for (i = 0; str[i]; i++)
@@ -66,10 +66,10 @@ char **strtow(char *str)
 		}
 		copyString(arrStr[count], str + i, j);
 		arrStr[count][j] = 0;
-		count++;
-		i += j;
+		count++, i += j;
+		if (str[i] == 0)
+			break;
 	}
 	arrStr[count] = NULL;
 	return (arrStr);
 }
-
