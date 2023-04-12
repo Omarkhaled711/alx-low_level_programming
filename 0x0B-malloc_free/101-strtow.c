@@ -45,7 +45,7 @@ char **strtow(char *str)
 		while (str[i] && str[i] != ' ')
 			i++;
 	}
-	arrStr = (char **) malloc(sizeof(char *) * (count + 1));
+	arrStr = (char **) malloc(sizeof(char *) * count);
 	if (count == 0 || arrStr == NULL)
 		return (NULL);
 	count = 0;
