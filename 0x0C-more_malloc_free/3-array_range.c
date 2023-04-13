@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * array_range - a function that creates an array of integers between min and max included
+ * array_range - creates an array of ints between min and max included
  *
  * @min: the min value in the array
  * @max: the max value in the array
@@ -13,6 +13,7 @@ int *array_range(int min, int max)
 {
 	int *p;
 	int i, j = 0;
+
 	if (min > max)
 		return (NULL);
 	p = malloc(sizeof(*p) * (max - min + 1));
