@@ -188,6 +188,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	_puts(result);
+	free(result);
 	return (0);
 }
 
