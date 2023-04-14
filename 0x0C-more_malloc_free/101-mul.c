@@ -58,17 +58,18 @@ char *_strdup(char *str)
  *
  * Return: A string with the result of the multiplication
  */
-char *multiply(char *s1,  char *s2)
+char *multiply(char *s1, char *s2)
 {
-	int len1 = _strlen(s1), len2 = _strlen(s2), i, j, carry;
+	int len1 = _strlen(s1), len2 = _strlen(s2), carry, i, j;
 	int digit1, digit2, product;
 	char *result = malloc((len1 + len2 + 1) * sizeof(char));
+	char *p, *final_result;
 
-	if (result == NULL)
-		return (NULL);
 	for (i = 0; i < (len1 + len2); i++)
 		result[i] = '0';
 	result[len1 + len2] = 0;
+	if (result == NULL)
+		return (NULL);
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
@@ -82,65 +83,16 @@ char *multiply(char *s1,  char *s2)
 		}
 		result[i] += carry;
 	}
-	return (result);
-}
 
-/**
- * remove_leading_zeros - Remove leading zeros from a string
- *
- * @s: The string to remove zeros from
- *
- * Return: A pointer to the first non-zero character in the string
- */
-char *remove_leading_zeros(char *s)
-{
-	char *p, *result;
-
-	p = s;
+	/* Remove leading zeros */
+	p = result;
 	while (*p == '0' && *(p + 1) != '\0')
 		p++;
-	result = _strdup(p);
-	if (result == NULL)
-		return (NULL);
-	*(result + _strlen(result)) = '\0';
-	return (result);
-}
-/**
- * multiply_strings - Multiply two strings of digits
- *
- * @s1: The first string of digits
- * @s2: The second string of digits
- *
- * Return: A string with the result of the multiplication
- */
-char *multiply_strings(char *s1, char *s2)
-{
-	char *result, *final_result;
+	/* Copy result to a new string */
+	final_result = _strdup(p);
 
-	result = multiply(s1, s2);
-	if (result == NULL)
-		return (NULL);
-	final_result = remove_leading_zeros(result);
 	free(result);
 	return (final_result);
-}
-/**
- * check_letters - check if a letter exist in a string
- *
- * @s: the string to check
- *
- * Return: 1 if a letter exist, 0 otherwise
- */
-int check_letters(char *s)
-{
-	int i;
-
-	for (i = 0; s[i]; i++)
-	{
-		if (s[i] < '0' || s[i] > '9')
-			return (1);
-	}
-	return (0);
 }
 /**
  * _puts - a function that prints  a string.
@@ -170,21 +122,29 @@ void _puts(char *str)
 int main(int argc, char *argv[])
 {
 	char *result;
+	int i, j;
 
 	if (argc != 3)
 	{
 		_puts("Error");
 		exit(98);
 	}
-	if (check_letters(argv[1]) || check_letters(argv[2]))
+	for (i = 1; i < 3; i++)
 	{
-		_puts("Error");
-		exit(98);
+		for (j = 0; argv[i][j]; j++)
+		{
+			if (argv[i][j] < '0'  || argv[i][j] > '9')
+			{
+				_puts("Error");
+				exit(98);
+			}
+		}
 	}
-	result = multiply_strings(argv[1], argv[2]);
+	result = multiply(argv[1], argv[2]);
 	if (result == NULL)
 	{
-		return (0);
+		_puts("Erro");
+		exit(98);
 	}
 	_puts(result);
 	free(result);
