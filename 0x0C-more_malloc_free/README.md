@@ -4,4 +4,5 @@
 * 1-string_nconcat.c: a function that concatenates two string, The returned pointer shall point to a newly allocated space in memory, which contains s1, followed by the first n bytes of s2, and null terminated  
 * 2-calloc.c: a function that implements calloc, using malloc.  
 * 3-array_range.c: a function that creates an array of all the values from min (included) to max (included), ordered from min to max  
-* 100-realloc.c: a function that implements realloc, using malloc and free.
+* 100-realloc.c: a function that implements realloc, using malloc and free.  
+* 101-mul.c: a program that multiplies two strings of any size containing positive numbers.
