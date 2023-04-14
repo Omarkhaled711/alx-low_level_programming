@@ -184,8 +184,7 @@ int main(int argc, char *argv[])
 	result = multiply_strings(argv[1], argv[2]);
 	if (result == NULL)
 	{
-		_puts("Error");
-		exit(98);
+		return (0);
 	}
 	_puts(result);
 	free(result);
