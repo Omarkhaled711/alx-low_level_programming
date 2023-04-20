@@ -29,9 +29,9 @@ void print_all(const char * const format, ...)
 				printf("%s%f", seprate, va_arg(formatPtr, double));
 				break;
 			case 's':
-				check = "(nil)";
-				if (check != NULL)
-					check = va_arg(formatPtr, char *);
+				check = va_arg(formatPtr, char *);
+				if (check == NULL)
+					check = "(nil)";
 				printf("%s%s", seprate, check);
 				break;
 			default:
