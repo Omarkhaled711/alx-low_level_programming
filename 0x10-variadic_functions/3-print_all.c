@@ -10,8 +10,8 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, flag = 0;
-	char *check;
+	int i = 0;
+	char *check, *seprate = "";
 	va_list formatPtr;
 
 	va_start(formatPtr, format);
@@ -20,28 +20,25 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(formatPtr, int));
-				flag = 1;
+				printf("%s%c", seprate, va_arg(formatPtr, int));
 				break;
 			case 'i':
-				printf("%d", va_arg(formatPtr, int));
-				flag = 1;
+				printf("%s%d", seprate, va_arg(formatPtr, int));
 				break;
 			case 'f':
-				printf("%f", va_arg(formatPtr, double));
-				flag = 1;
+				printf("%s%f", seprate, va_arg(formatPtr, double));
 				break;
 			case 's':
 				check = "(nil)";
 				if (check != NULL)
 					check = va_arg(formatPtr, char *);
-				printf("%s", check);
-				flag = 1;
+				printf("%s%s", seprate, check);
 				break;
+			default:
+				i++;
+				continue;
 		}
-		if (format[i + 1] != 0 && flag == 1)
-			printf(", ");
-		flag = 0;
+		seprate = ", ";
 		i++;
 	}
 	printf("\n");
