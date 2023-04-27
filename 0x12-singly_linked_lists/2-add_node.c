@@ -8,9 +8,9 @@
  * @s: the string to find its length
  * Return: the length of s
  */
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; s[i]; i++)
 	{
