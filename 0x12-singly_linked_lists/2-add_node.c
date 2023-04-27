@@ -10,13 +10,12 @@
  */
 int _strlen(char *s)
 {
-	int i, len = 0;
+	int i;
 
 	for (i = 0; s[i]; i++)
 	{
-		len++;
 	}
-	return (len);
+	return (i);
 }
 /**
  * add_node - adds a node to the beginning of the list
@@ -28,15 +27,13 @@ int _strlen(char *s)
 
 list_t *add_node(list_t **head, const char *str)
 {
-	char *str_list;
 	list_t *new;
 
-	str_list = strdup(str);
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 		return (NULL);
-	new->len = _strlen(str_list);
-	new->str = str_list;
+	new->str = strdup(str);
+	new->len = _strlen(new->str);
 	new->next = *head;
 	*head = new;
 	return (new);
