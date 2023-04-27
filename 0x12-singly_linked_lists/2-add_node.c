@@ -31,11 +31,9 @@ list_t *add_node(list_t **head, const char *str)
 	char *str_list;
 	list_t *new;
 
-	if (str == NULL || head == NULL)
-		return (NULL);
 	str_list = strdup(str);
 	new = malloc(sizeof(list_t));
-	if (str_list == NULL || new == NULL)
+	if (new == NULL)
 		return (NULL);
 	new->len = _strlen(str_list);
 	new->str = str_list;
