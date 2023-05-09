@@ -29,7 +29,7 @@ void print_read_error_and_exit(char *filename)
 
 void print_write_error_and_exit(char *filename)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", filename);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 	exit(99);
 }
 /**
