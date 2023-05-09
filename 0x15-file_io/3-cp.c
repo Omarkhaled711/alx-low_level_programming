@@ -60,7 +60,10 @@ int main(int argc, char *argv[])
 	op1 = open(argv[1], O_RDONLY);
 	if (op1 == -1)
 		print_read_error_and_exit(argv[1]);
-	op2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (access(argv[2], F_OK) != -1)
+		op2 = open(argv[2], O_WRONLY | O_TRUNC);
+	else
+		op2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (op2 == -1)
 		print_write_error_and_exit(argv[2]);
 	while ((rd1 = read(op1, buff, 1024)) > 0)
