@@ -12,7 +12,7 @@ all: $(SRC:.c=.o)
 clean:
 	$(RM) *~ $(NAME)
 oclean:
-	$(RM) $(OBJ)
+	$(RM) $(SRC:.c=.o)
 fclean: clean oclean
 
 re: oclean all
