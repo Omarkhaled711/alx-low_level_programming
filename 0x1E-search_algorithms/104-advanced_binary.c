@@ -32,12 +32,10 @@ int recursive_binary(int *array, size_t high, size_t low,
 			return (recursive_binary(array, mid, low,
 			mid, value));
 		if (array[mid] > value)
-			return (recursive_binary(array, mid - 1, low,
+			return (recursive_binary(array, mid, low,
 			index, value));
 		return (recursive_binary(array, high, mid + 1,
 		index, value));
-
-
 	}
 /**
  * advanced_binary - searches an array in sorted order with Bs
